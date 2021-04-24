@@ -21,6 +21,9 @@ require('./config/passport')(passport)
 connectDB()
 
 const app = express()
+// body parser
+app.use(express.urlencoded({extended:true}))
+app.use(express.json())
 
 // morgan
 if(process.env.NODE_ENV==='development'){
